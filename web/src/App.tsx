@@ -31,7 +31,7 @@ export default function App() {
 
   const [ref] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
-      "(max-width: 1300px)": {
+      "(max-width: 1400px)": {
         slides: {
           perView: 4.5,
           spacing: 24

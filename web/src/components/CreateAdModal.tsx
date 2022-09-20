@@ -75,7 +75,7 @@ export function CreateAdModal() {
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed"/>
 
-      <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
+      <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg sm:w-[480px] w-full shadow-lg shadow-black/25">
         <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
           
           <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4 ">
@@ -83,7 +83,7 @@ export function CreateAdModal() {
               <label htmlFor="game" className="font-semibold">Qual o game?</label>
               <Select name="game">
                 <Selection.Trigger className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-100 text-zinc-500 flex justify-between items-center ">
-                  <Selection.SelectValue placeholder="Selecione o game que deseja jogar"/>
+                  <Selection.SelectValue placeholder="Selecione o game para jogar"/>
                   <Selection.SelectIcon>
                     <CaretDown size={20}/>
                   </Selection.SelectIcon>
@@ -111,20 +111,20 @@ export function CreateAdModal() {
               <Input name="name" id="name" type="text" placeholder="Como te chamam dentro do game?"/>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
+            <div className="sm:grid sm:grid-cols-2 gap-6 flex flex-wrap">
+              <div className="flex flex-col gap-2 flex-1">
                 <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
                 <Input name="yearsPlaying" id="yearsPlaying" type="number" placeholder="Tudo bem ser ZERO"/>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 flex-1">
                 <label htmlFor="discord">Qual seu Discord?</label>
                 <Input name="discord" id="discord" type="text" placeholder="Usuario#0000"/>
               </div>
             </div>
 
-            <div className="flex gap-6">
-              <div className="flex flex-col gap2">
+            <div className="flex gap-6 flex-wrap">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="weekDays">Quando costuma jogar?</label>
 
                 <ToggleGroup.Root 
@@ -143,7 +143,7 @@ export function CreateAdModal() {
                 </ToggleGroup.Root>
               </div>
 
-              <div className="flex flex-col gap2 flex-1">
+              <div className="flex flex-col gap-2 flex-1">
                 <label htmlFor="hourStart">Qual horário do dia?</label>
                 <div className="grid grid-cols-2 gap-2">
                   <Input name="hourStart" id="hourStart" type="time" placeholder="De"/>
@@ -170,13 +170,13 @@ export function CreateAdModal() {
               Costumo me conectar ao chat de voz
             </label>
 
-            <footer className="mt-4 flex justify-end gap-4">
+            <footer className="mt-4 flex justify-center gap-4 flex-wrap sm:justify-end">
               <Dialog.Close 
                 type="button"
-                className="bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600">Cancelar</Dialog.Close>
+                className="bg-zinc-500 px-5 sm:w-auto w-[190px] h-12 rounded-md font-semibold hover:bg-zinc-600">Cancelar</Dialog.Close>
               <button
                 type="submit"
-                className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
+                className="bg-violet-500 px-5 sm:w-auto w-[190px]  h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
               >
                 <GameController size={24}/>
                 Encontrar duo
